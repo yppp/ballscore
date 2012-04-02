@@ -23,4 +23,15 @@ describe Game  do
       @game.score.should == 20
     end
   end
+
+  context "でパーフェクトの時" do
+    before do
+      @game = Game::new
+      12.times{@game.roll(10)}
+    end
+
+    it "スコアは300" do
+      @game.score.should == 300
+    end
+  end
 end
