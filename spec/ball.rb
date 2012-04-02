@@ -34,4 +34,15 @@ describe Game  do
       @game.score.should == 300
     end
   end
+
+  context "ですべて5ピン倒した時" do
+    before do
+      @game = Game::new
+      21.times{@game.roll(5)}
+    end
+
+    it "スコアは150" do
+      @game.score.should == 150
+    end
+  end
 end
