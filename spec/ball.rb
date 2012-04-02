@@ -46,3 +46,14 @@ describe Game  do
     end
   end
 end
+
+describe Game, "の受け入れテストの場合" do
+  before do
+    @game = Game::new
+    [1,4,4,5,6,4,5,5,10,0,1,7,3,6,4,10,2,8,6].each {|pin| @game.roll(pin)}
+  end
+
+  it "スコアは133" do
+    @game.score.should == 133
+  end
+end
